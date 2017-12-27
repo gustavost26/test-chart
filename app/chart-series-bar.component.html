@@ -1,0 +1,22 @@
+<StackLayout>
+    <TextField hint="Email Address" keyboardType="email"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField hint="Password" secure="true"></TextField>
+
+    <Button text="Sign in"></Button>
+    <Button text="Sign up for Groceries GST"></Button>
+
+    <GridLayout>
+        <!-- >> chart-angular-bar-series -->
+        <RadCartesianChart tkExampleTitle tkToggleNavButton>
+            <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+            <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+
+            <BarSeries tkCartesianSeries [items]="chartResult" categoryProperty="hour" valueProperty="value" showLabels="true" >
+                <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#60B3FC" textSize="10" textColor="White"></PointLabelStyle>
+            </BarSeries>
+        </RadCartesianChart>
+        <!-- << chart-angular-bar-series -->
+    </GridLayout>
+</StackLayout>
+
