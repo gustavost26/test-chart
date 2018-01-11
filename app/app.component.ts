@@ -3,7 +3,7 @@ import * as _ from "lodash";
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'chart-series-bar.component.html'
+    templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
     chartResult: any[] = [];

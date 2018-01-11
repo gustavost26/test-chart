@@ -1,0 +1,41 @@
+<ActionBar title="Cartão de Actividade Física" class="action-bar">
+    <NavigationButton text="Voltar" android:icon="res://ic_arrow_back" (tap)="back()"></NavigationButton>
+</ActionBar>
+
+<GridLayout rows="*,60">
+    <ScrollView row="0">
+        <GridLayout rows="*, *, *" columns="*,*,*" >
+            <StackLayout row="0" colSpan="3" orientation="horizontal" width="100%">
+                <AnimatedCircle backgroundColor="transparent" width="200" height="200" animated="true" animateFrom="0" animationDuration="1000"
+                                rimColor="#8F3A6B" text="{{progress}}%" barColor="#327af3" fillColor="#f6f6f6" clockwise="true" rimWidth="{{ isIOs ? 25 : 50 }}"
+                                progress="{{progress}}" marginTop="40" marginBottom="50" textSize="28">
+                </AnimatedCircle>
+            </StackLayout>
+            <Label class="af-item" row="1" col="0" text="1000" textWrap="true"></Label>
+            <Label class="af-item" row="1" col="1" text="90" textWrap="true"></Label>
+            <Label class="af-item" row="1" col="2" text="80" textWrap="true"></Label>
+            <Label class="af-item-text" row="2" col="0" text="Passos" textWrap="true"></Label>
+            <Label class="af-item-text" row="2" col="1" text="Cal" textWrap="true"></Label>
+            <Label class="af-item-text" row="2" col="2" text="Km" textWrap="true"></Label>
+        </GridLayout>
+    </ScrollView>
+    <StackLayout row="0" col="1"  height="210">
+        <GridLayout>
+            <RadCartesianChart tkExampleTitle tkToggleNavButton>
+                <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+                <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+
+                <BarSeries tkCartesianSeries [items]="chartResult" selectionMode="DataPoint" categoryProperty="hour" valueProperty="value" showLabels="true" >
+                    <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#60B3FC" textSize="10" textColor="White"></PointLabelStyle>
+                </BarSeries>
+            </RadCartesianChart>
+        </GridLayout>
+    </StackLayout>
+    <StackLayout row="1" orientation="horizontal">
+        <GridLayout rows="*" columns="*,*,*">
+            <Button col="0" text="Dia" [ngClass]="{'active-af': activeDia}" class="btn btn-af" (tap)="getInformations(card.data, 0)"></Button>
+            <Button col="1" text="Semana" [ngClass]="{'active-af': activeSemana}" class="btn btn-af" (tap)="getInformations(card.data, 1)"></Button>
+            <Button col="2" text="Mês" [ngClass]="{'active-af': activeMes}" class="btn btn-af" (tap)="getInformations(card.data, 2)"></Button>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>
