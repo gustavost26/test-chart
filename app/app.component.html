@@ -24,6 +24,7 @@
             <RadCartesianChart tkExampleTitle tkToggleNavButton pointSelectionMode="Single" (pointSelected)="onPointSelected($event)" (pointDeselected)="onPointDeselected($event)">
                 <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
                 <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+                <Trackball tkCartesianTrackball></Trackball>
 
                 <BarSeries tkCartesianSeries [items]="chartResult" selectionMode="DataPoint" categoryProperty="hour" valueProperty="value" [showLabels]="showLabelProperty" >
                     <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#60B3FC" textSize="10" textColor="White"></PointLabelStyle>
