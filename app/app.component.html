@@ -23,7 +23,7 @@
         <GridLayout>
             <RadCartesianChart tkExampleTitle tkToggleNavButton pointSelectionMode="Single" (pointSelected)="onPointSelected($event)" (pointDeselected)="onPointDeselected($event)">
                 <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
-                <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+                <LinearAxis tkCartesianVerticalAxis labelFormat="%.0f"></LinearAxis>
                 <Trackball tkCartesianTrackball></Trackball>
 
                 <BarSeries tkCartesianSeries [items]="chartResult" selectionMode="DataPoint" categoryProperty="hour" valueProperty="value" [showLabels]="showLabelProperty" >
