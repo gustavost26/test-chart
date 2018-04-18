@@ -1,16 +1,48 @@
-<StackLayout>
-    <GridLayout row="*, *">
-        <StackLayout row="0">
-            <RadCartesianChart tkExampleTitle tkToggleNavButton>
-                <CategoricalAxis tkCartesianHorizontalAxis allowPan="true" allowZoom="true"></CategoricalAxis>
-                <LinearAxis tkCartesianVerticalAxis allowPan="true" ></LinearAxis>
+<ActionBar title="Cartão de Actividade Física" class="action-bar">
+    <NavigationButton text="Voltar" android:icon="res://ic_arrow_back" (tap)="back()"></NavigationButton>
+</ActionBar>
 
-                <BarSeries tkCartesianSeries [items]="chartResult" categoryProperty="hour" valueProperty="value" showLabels="true" >
+<GridLayout rows="*,*">
+    <StackLayout row="0" col="1"  height="210">
+        <GridLayout>
+            <RadCartesianChart tkExampleTitle tkToggleNavButton pointSelectionMode="Single" (pointSelected)="onPointSelected($event)" (pointDeselected)="onPointDeselected($event)">
+                <CategoricalAxis tkCartesianHorizontalAxis allowPan="true" allowZoom="true"></CategoricalAxis>
+                <LinearAxis *ngIf="!isIOs" tkCartesianVerticalAxis labelFormat="%.0f" allowPan="true"></LinearAxis>
+                <Trackball tkCartesianTrackball></Trackball>
+
+                <BarSeries tkCartesianSeries [items]="chartResult" selectionMode="DataPoint" categoryProperty="hour" valueProperty="value" [showLabels]="showLabelProperty" >
                     <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#60B3FC" textSize="10" textColor="White"></PointLabelStyle>
                 </BarSeries>
             </RadCartesianChart>
-        </StackLayout>
+        </GridLayout>
+    </StackLayout>
+    <StackLayout row="1" col="1"  height="210">
+        <GridLayout>
+            <RadCartesianChart tkExampleTitle tkToggleNavButton>
+                <CategoricalAxis tkCartesianHorizontalAxis allowPan="true" allowZoom="true"></CategoricalAxis>
+                <LinearAxis *ngIf="!isIOs" tkCartesianVerticalAxis labelFormat="%.0f" allowPan="true"></LinearAxis>
+                <Trackball tkCartesianTrackball></Trackball>
 
-    </GridLayout>
-</StackLayout>
+                <BarSeries tkCartesianSeries [items]="chartResult" selectionMode="DataPoint" categoryProperty="hour" valueProperty="value" [showLabels]="showLabelProperty" >
+                    <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#60B3FC" textSize="10" textColor="White"></PointLabelStyle>
+                </BarSeries>
+            </RadCartesianChart>
 
+            <RadCartesianChart tkExampleTitle tkToggleNavButton [horizontalZoom]="3">
+                <CategoricalAxis tkCartesianHorizontalAxis allowPan="true" allowZoom="true" verticalLocation="Bottom" labelSize="11"></CategoricalAxis>
+                <LinearAxis *ngIf="!isIOs" tkCartesianVerticalAxis labelFormat="%.0f" allowPan="true" horizontalLocation="Left" labelSize="11"></LinearAxis>
+                <Trackball tkCartesianTrackball></Trackball>
+
+                <BarSeries tkCartesianSeries [items]="outubro" [stackMode]="stackMode"  categoryProperty="Country" valueProperty="Amount" showLabels="true">
+                    <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#6bb5fa" textSize="10" textColor="White"></PointLabelStyle>
+                </BarSeries>
+                <BarSeries tkCartesianSeries [items]="novembro" [stackMode]="stackMode" categoryProperty="Country" valueProperty="Amount" showLabels="true">
+                    <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#fb8c84" textSize="10" textColor="White"></PointLabelStyle>
+                </BarSeries>
+                <BarSeries tkCartesianSeries [items]="dezembro" [stackMode]="stackMode" categoryProperty="Country" valueProperty="Amount" showLabels="true">
+                    <PointLabelStyle tkBarLabelStyle margin="10" fontStyle="Bold" fillColor="#7b7a94" textSize="10" textColor="White"></PointLabelStyle>
+                </BarSeries>
+            </RadCartesianChart>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>
