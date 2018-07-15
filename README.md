@@ -6,8 +6,6 @@ https://docs.nativescript.org/angular/start/quick-setup#step-2-install-the-nativ
 
 `Site alternativo: `https://nativescriptbrasil.github.io/2017/03/14/instalando-nativescript.html
 
-`npm install`
-
 ### Como rodar: 
 
 `npm i` para instalar os pacotes do package.json
