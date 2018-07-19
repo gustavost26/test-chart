@@ -3,16 +3,27 @@
 </ActionBar>
 
 <GridLayout rows="*">
-      <RadCartesianChart tkExampleTitle tkToggleNavButton>
-        <LinearAxis tkCartesianHorizontalAxis></LinearAxis>
-        <LinearAxis tkCartesianVerticalAxis></LinearAxis>
 
-        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc0"></ScatterSeries>
-        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc1"></ScatterSeries>
-        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc2"></ScatterSeries>
-        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc3"></ScatterSeries>
-        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc4"></ScatterSeries>
+    <RadCartesianChart tkExampleTitle tkToggleNavButton [horizontalZoom]="3">
+        <CategoricalAxis tkCartesianHorizontalAxis allowPan="true" allowZoom="true"></CategoricalAxis>
+        <LinearAxis tkCartesianVerticalAxis allowPan="true"></LinearAxis>
+        <Trackball tkCartesianTrackball></Trackball>
 
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="Age" yProperty="Salary"></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="Age" yProperty="Spendings"></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="Age" yProperty="Savings"></ScatterSeries>
+
+
+        <!--<ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc0" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc1" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc2" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc3" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc4" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc5" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc6" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc7" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc8" ></ScatterSeries>
+        <ScatterSeries tkCartesianSeries [items]="scatter" xProperty="dia" yProperty="imc9" ></ScatterSeries>-->
     </RadCartesianChart>
 
 </GridLayout>
