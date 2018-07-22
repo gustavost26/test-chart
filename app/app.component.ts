@@ -114,6 +114,8 @@ export class AppComponent implements OnInit {
             { Age: 65, Salary: 20000, Spendings: 20500, Savings: 10,  Impact: 9 }
         ];
 
+        console.log('a');
+
        /*
        this.scatter = [
             { Age: 20, Salary: 15300, Spendings: 4500, Savings: 5500, Teste: 8500 , Tes: 20500, Impact: 1 },
@@ -138,72 +140,16 @@ export class AppComponent implements OnInit {
            {dia: 6, imc0: 50.4, imc1: 100.4, imc2: 150.4, imc3: 200.4, imc4: 250.4}
        ];*/
 
-        /*this.scatter = [
-            {dia: 1, imc0: 19.4},
-            {dia: 2, imc0: 5.4},
-            {dia: 3, imc0: 11.4},
-            {dia: 4, imc0: 5.4},
-            {dia: 5, imc0: 15.4},
-            {dia: 6, imc0: 50.4},
-        ];*/
-
         //this.scatter = this.flatten1(this.orderJson(this.imcT));
 
     }
 
-    flatten1 = list => {
-
-        const digest = list.reduce((acc, {data, Altura, Peso, IMC}) => {
-            const current = new Date(data);
-            const day = current.getDate();
-            const month = current.getMonth();
-            const year = current.getFullYear();
-
-            if(month === new Date().getMonth() && year === new Date().getFullYear()){
-                if (acc.has(day)) {
-                    acc.get(day).imc.push(parseInt(IMC));
-                } else {
-                    acc.set(day, {dia: day, imc: [parseInt(IMC)]});
-                }
-            }
-            return acc
-        }, new Map());
-
-        let newArray = [];
-
-        digest.forEach(el => {
-            let data = {dia: 0, imc0: 0, imc1: 0, imc2: 0, imc3: 0, imc4: 0, imc5: 0, imc6: 0, imc7: 0, imc8: 0, imc9: 0};
-            for(let i=0; i < el.imc.length; i++){
-                data.dia  = el.dia;
-                data.imc0 = el.imc[0] !== undefined ? el.imc[0] : 0;
-                data.imc1 = el.imc[1] !== undefined ? el.imc[1] : 0;
-                data.imc2 = el.imc[2] !== undefined ? el.imc[2] : 0;
-                data.imc3 = el.imc[3] !== undefined ? el.imc[3] : 0;
-                data.imc4 = el.imc[4] !== undefined ? el.imc[4] : 0;
-                data.imc5 = el.imc[5] !== undefined ? el.imc[5] : 0;
-                data.imc6 = el.imc[6] !== undefined ? el.imc[6] : 0;
-                data.imc7 = el.imc[7] !== undefined ? el.imc[7] : 0;
-                data.imc8 = el.imc[8] !== undefined ? el.imc[8] : 0;
-                data.imc9 = el.imc[9] !== undefined ? el.imc[9] : 0;
-            }
-
-            newArray.push(data);
-        });
-        newArray.unshift({dia: 0, imc0: 0, imc1: 0, imc2: 0, imc3: 0, imc4: 0, imc5: 0, imc6: 0, imc7: 0, imc8: 0, imc9: 0});
-        return newArray;
-    };
-
-    orderJson(json){
-        let newJson = [];
-        json.forEach(el => {
-            if( el.hasOwnProperty('data') && el.hasOwnProperty('Altura') &&
-                el.hasOwnProperty('Peso') && el.hasOwnProperty('IMC')){
-                newJson.push({data: el.data, Altura: el.Altura, Peso: el.Peso, IMC: el.IMC});
-            }
-        });
-
-        return newJson;
+    teste(val){
+        console.log('object', val.object);
+        console.log('eventName', val.eventName);
+        console.log('pointData', val.pointData);
+        console.log('pointIndex', val.pointIndex);
+        console.log('series', val.series);
     }
-
 
 }
