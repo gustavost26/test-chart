@@ -76,6 +76,9 @@ export class AppComponent implements OnInit {
         { data: '2018-07-10T14:52:00', Altura: '50', Peso: '70', IMC: '200,4' },
         { data: '2018-07-10T14:52:00', Altura: '50', Peso: '70', IMC: '250,4' },
 
+
+
+
         //Dados de outras datas
         { data: '2017-07-04T14:52:00', Altura: '50', Peso: '70', IMC: '5,4' },
         { data: '2016-07-04T14:52:00', Altura: '50', Peso: '70', IMC: '10,4' },
@@ -101,55 +104,82 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
 
-        this.scatter = [
-            { Age: 20, Salary: 15300, Spendings: 4500, Savings: 5500, Impact: 1 },
-            { Age: 25, Salary: 12300, Spendings: 6500, Savings: 5200, Impact: 7 },
-            { Age: 30, Salary: 14000, Spendings: 8500, Savings: 5500, Impact: 10 },
-            { Age: 35, Salary: 18000, Spendings: 9500, Savings: 7500, Impact: 6 },
-            { Age: 40, Salary: 19520, Spendings: 15540, Savings: 3800,Impact: 4 },
-            { Age: 45, Salary: 20000, Spendings: 15500, Savings: 4500, Impact: 2 },
-            { Age: 50, Salary: 24200, Spendings: 20500, Savings: 3700, Impact: 11 },
-            { Age: 55, Salary: 24000, Spendings: 22500, Savings: 1500, Impact: 8 },
-            { Age: 60, Salary: 22000, Spendings: 22500, Savings: 500,  Impact: 1 },
-            { Age: 65, Salary: 20000, Spendings: 20500, Savings: 10,  Impact: 9 }
-        ];
+        /* this.scatter = [
+             { Age: 20, Salary: 15300, Spendings: 4500, Savings: 5500, Impact: 1 },
+             { Age: 25, Salary: 12300, Spendings: 6500, Savings: 5200, Impact: 7 },
+             { Age: 30, Salary: 14000, Spendings: 8500, Savings: 5500, Impact: 10 },
+             { Age: 35, Salary: 18000, Spendings: 9500, Savings: 7500, Impact: 6 },
+             { Age: 40, Salary: 19520, Spendings: 15540, Savings: 3800,Impact: 4 },
+             { Age: 45, Salary: 20000, Spendings: 15500, Savings: 4500, Impact: 2 },
+             { Age: 50, Salary: 24200, Spendings: 20500, Savings: 3700, Impact: 11 },
+             { Age: 55, Salary: 24000, Spendings: 22500, Savings: 1500, Impact: 8 },
+             { Age: 60, Salary: 22000, Spendings: 22500, Savings: 500,  Impact: 1 },
+             { Age: 65, Salary: 20000, Spendings: 20500, Savings: 10,  Impact: 9 }
+         ];
 
-        console.log('a');
-
-       /*
-       this.scatter = [
-            { Age: 20, Salary: 15300, Spendings: 4500, Savings: 5500, Teste: 8500 , Tes: 20500, Impact: 1 },
-            { Age: 25, Salary: 12300, Spendings: 6500, Savings: 5200, Teste: 8500 , Tes: 20500, Impact: 7 },
-            { Age: 30, Salary: 14000, Spendings: 8500, Savings: 5500, Teste: 8500 , Tes: 20500, Impact: 10 },
-            { Age: 35, Salary: 18000, Spendings: 9500, Savings: 7500, Teste: 8500 , Tes: 20500, Impact: 6 },
-            { Age: 40, Salary: 19520, Spendings: 15540, Savings: 3800,Teste: 8500 , Tes: 20500, Impact: 4 },
-            { Age: 45, Salary: 20000, Spendings: 15500, Savings: 4500,Teste: 8500 , Tes: 20500, Impact: 2 },
-            { Age: 50, Salary: 24200, Spendings: 20500, Savings: 3700,Teste: 8500 , Tes: 20500, Impact: 11 },
-            { Age: 55, Salary: 24000, Spendings: 22500, Savings: 1500,Teste: 8500 , Tes: 20500, Impact: 8 },
-            { Age: 60, Salary: 22000, Spendings: 22500, Savings: 500, Teste: 8500 , Tes: 20500, Impact: 1 },
-            { Age: 65, Salary: 20000, Spendings: 20500, Savings: 10,  Teste: 8500 , Tes: 20500, Impact: 9 }
-        ];
-
-       this.scatter = [
-           {dia: 0, imc0: 0, imc1: 0,  imc2: 0,  imc3: 0,  imc4: 0},
-           {dia: 1, imc0: 19.4, imc1: 30.4,  imc2: 60.4,  imc3: 80.4,  imc4: 100.4},
-           {dia: 2, imc0: 5.4,  imc1: 20.4,  imc2: 40.4,  imc3: 60.4,  imc4: 85.4},
-           {dia: 3, imc0: 11.4, imc1: 21.4,  imc2: 21.4,  imc3: 41.4,  imc4: 0},
-           {dia: 4, imc0: 5.4,  imc1: 10.4,  imc2: 15.4,  imc3: 0,     imc4: 0},
-           {dia: 5, imc0: 15.4, imc1: 30.4,  imc2: 0,     imc3: 0,     imc4: 0},
-           {dia: 6, imc0: 50.4, imc1: 100.4, imc2: 150.4, imc3: 200.4, imc4: 250.4}
-       ];*/
+        */
 
         //this.scatter = this.flatten1(this.orderJson(this.imcT));
 
+        this.scatter = [{"dia":31,"val0":100,"val1":100,"val2":0,"val3":0,"val4":0,"val5":0,"val6":0,"val7":0,"val8":0,"val9":0},{"dia":30,"val0":100,"val1":100,"val2":100,"val3":100,"val4":100,"val5":100,"val6":0,"val7":0,"val8":0,"val9":0},{"dia":27,"val0":100,"val1":100,"val2":100,"val3":100,"val4":100,"val5":100,"val6":0,"val7":0,"val8":0,"val9":0},{"dia":19,"val0":22,"val1":0,"val2":0,"val3":0,"val4":0,"val5":0,"val6":0,"val7":0,"val8":0,"val9":0},{"dia":16,"val0":27,"val1":8,"val2":32,"val3":0,"val4":0,"val5":0,"val6":0,"val7":0,"val8":0,"val9":0},{"dia":13,"val0":24,"val1":27,"val2":0,"val3":0,"val4":0,"val5":0,"val6":0,"val7":0,"val8":0,"val9":0},{"dia":9,"val0":81,"val1":0,"val2":0,"val3":0,"val4":0,"val5":0,"val6":0,"val7":0,"val8":0,"val9":0}];
+
     }
 
-    teste(val){
-        console.log('object', val.object);
-        console.log('eventName', val.eventName);
-        console.log('pointData', val.pointData);
-        console.log('pointIndex', val.pointIndex);
-        console.log('series', val.series);
+    flatten1 = (list) => {
+
+        const digest = list.reduce((acc, {data, Altura, Peso, IMC}) => {
+            const current = new Date(data);
+            const day = current.getDate();
+            const month = current.getMonth();
+            const year = current.getFullYear();
+
+            //new Date().getMonth()
+            if(month === 6 && year === new Date().getFullYear()){
+                if (acc.has(day)) {
+                    acc.get(day).val.push(parseInt(IMC));
+                } else {
+                    acc.set(day, {dia: day, val: [parseInt(IMC)]});
+                }
+            }
+            return acc
+        }, new Map());
+
+        let newArray = [];
+
+        digest.forEach(el => {
+            let data = {dia: 0, val0: 0, val1: 0, val2: 0, val3: 0, val4: 0, val5: 0, val6: 0, val7: 0, val8: 0, val9: 0};
+
+            for (let i = 0; i < el.val.length; i++) {
+                data.dia  = el.dia;
+                data.val0 = el.val[0] !== undefined ? el.val[0] : 0;
+                data.val1 = el.val[1] !== undefined ? el.val[1] : 0;
+                data.val2 = el.val[2] !== undefined ? el.val[2] : 0;
+                data.val3 = el.val[3] !== undefined ? el.val[3] : 0;
+                data.val4 = el.val[4] !== undefined ? el.val[4] : 0;
+                data.val5 = el.val[5] !== undefined ? el.val[5] : 0;
+                data.val6 = el.val[6] !== undefined ? el.val[6] : 0;
+                data.val7 = el.val[7] !== undefined ? el.val[7] : 0;
+                data.val8 = el.val[8] !== undefined ? el.val[8] : 0;
+                data.val9 = el.val[9] !== undefined ? el.val[9] : 0;
+            }
+
+            newArray.push(data);
+        });
+        //newArray.unshift({dia: 0, imc0: 0, imc1: 0, imc2: 0, imc3: 0, imc4: 0, imc5: 0, imc6: 0, imc7: 0, imc8: 0, imc9: 0});
+        return newArray;
+    };
+
+    orderJson(json){
+        let newJson = [];
+        json.forEach(el => {
+            if( el.hasOwnProperty('data') && el.hasOwnProperty('Altura') &&
+                el.hasOwnProperty('Peso') && el.hasOwnProperty('IMC')){
+                newJson.push({data: el.data, Altura: el.Altura, Peso: el.Peso, IMC: el.IMC});
+            }
+        });
+
+        return newJson;
     }
+
 
 }
